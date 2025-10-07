@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plasty</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.jpg" type="image/x-icon">
+  </head>
+  <body class="page">
+    <article class="white-page">
+      <div class="white-page-content">
+        <img src="icon.jpg" class="briek-icon" alt="briek face">
+        <h1 class="heading">Plasty</h1>
+        <h2 class="description">an clay stopmotion movies <br>based on BSC</h2>
+        <a target="_blank" href="https://x.com/PlastyBSC" class="twitter-link">
+          <img src="twitter.png" class="twitter-icon" alt="twitter icon">
+        </a>
+        <p class="ca">CA: 
+          <br><br>
+        </p>
+      </div>
+    </article>
+    <article class="orange-page">
+       <video src="video.mp4" controls class="video"></video>
+      <h2 class="about-us">WE MADE EVERYTHING MANUALLY
+        <br>WITHOUT AI</h2>
+    </article>
+    <script>
+      const video = document.querySelector('.video');
+      video.volume = 0.2
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && entry.intersectionRatio === 1) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      }, {
+        threshold: 1 // 100% видимости
+      });
+
+      observer.observe(video);
+    </script>
+  </body>
+</html>
+
+
+
+
+
